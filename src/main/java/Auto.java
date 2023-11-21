@@ -1,8 +1,12 @@
-public class Auto extends BlackJack{
+public class Auto implements BlackJack{
     private String name;
-    public Auto(int code,String name){
-        super(code);
+    public Auto(String name){
         this.name = name;
+    }
+
+    @Override
+    public void open() {
+        System.out.println(this);
     }
 
     public String getName() {
@@ -11,5 +15,12 @@ public class Auto extends BlackJack{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

@@ -1,8 +1,12 @@
-public class Goat extends BlackJack{
+public class Goat implements BlackJack{
     private String name;
-    public Goat(int code,String name){
-        super(code);
+    public Goat(String name){
         this.name = name;
+    }
+
+    @Override
+    public void open() {
+        System.out.println(this);
     }
 
     public String getName() {
@@ -11,5 +15,12 @@ public class Goat extends BlackJack{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Goat{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
