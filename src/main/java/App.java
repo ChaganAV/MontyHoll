@@ -2,7 +2,6 @@ import java.util.*;
 
 public class App {
     private BlackJack[] box = new BlackJack[3];
-    private Map<Integer,Integer> mapResult = new HashMap<>();
     private Random random;
 
     public App(){
@@ -35,17 +34,16 @@ public class App {
         }
 
     }
-    public HashMap<Integer,Integer> getResult(){
-        return (HashMap<Integer, Integer>) this.mapResult;
-    }
+
     public int startGame(){
         Random random = new Random();
         int result = 0;
+        // игрок выбирает дверь
         int choice = random.nextInt(0,3);
 
         // ящик для оставшихся после первого выбора
         BlackJack[] box2 = new BlackJack[2];
-        //
+        // по результату выбора определим оставшиеся две двери
         switch (choice){
             case 0:
                 box2[0] = box[choice];
